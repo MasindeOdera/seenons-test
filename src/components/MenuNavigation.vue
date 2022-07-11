@@ -1,0 +1,169 @@
+<template>
+  <nav class="navigation" :class="{ active: active }">
+    <ul>
+      <li class="list">
+        <router-link to="/"
+          ><span class="icon"><ion-icon name="home-outline"></ion-icon></span
+          ><span class="title">Streams</span></router-link
+        >
+      </li>
+      <li class="list">
+        <router-link to="/Schedule"
+          ><span class="icon"
+            ><ion-icon name="calendar-outline"></ion-icon></span
+          ><span class="title">Schedule</span></router-link
+        >
+      </li>
+      <li class="list">
+        <router-link to="/Insights"
+          ><span class="icon"><ion-icon name="pulse-outline"></ion-icon></span
+          ><span class="title">Insights</span></router-link
+        >
+      </li>
+      <li class="list">
+        <router-link to="/Support"
+          ><span class="icon"><ion-icon name="medkit-outline"></ion-icon></span
+          ><span class="title">Support</span></router-link
+        >
+      </li>
+      <li class="list">
+        <router-link to="/Account"
+          ><span class="icon"><ion-icon name="person-outline"></ion-icon></span
+          ><span class="title">Account</span></router-link
+        >
+      </li>
+    </ul>
+  </nav>
+  <div class="toggle" :class="{ active: active }" @click="active = !active">
+    <ion-icon name="menu-outline" class="open"></ion-icon>
+    <ion-icon name="close-outline" class="close"></ion-icon>
+  </div>
+  <router-view />
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "MenuNavigation",
+  data() {
+    return {
+      active: false,
+    };
+  },
+});
+</script>
+
+<style lang="scss" scoped>
+.navigation {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  width: 70px;
+  border-radius: 10px;
+  box-sizing: initial;
+  border-left: 5px solid #4d5bf9;
+  background: #4d5bf9;
+  transition: width 0.5s;
+  overflow-x: hidden;
+
+  &.active {
+    width: 300px;
+  }
+
+  ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+
+    li {
+      position: relative;
+      list-style: none;
+      width: 100%;
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        display: flex;
+        text-decoration: none;
+        color: #fff;
+
+        &.router-link-exact-active {
+          background: #fff;
+          color: #333;
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+        }
+
+        .icon {
+          position: relative;
+          display: block;
+          min-width: 60px;
+          height: 60px;
+          line-height: 70px;
+          text-align: center;
+
+          ion-icon {
+            font-size: 1.5em;
+          }
+        }
+
+        .title {
+          position: relative;
+          display: block;
+          padding-left: 10px;
+          height: 60px;
+          line-height: 60px;
+          white-space: normal;
+        }
+      }
+    }
+  }
+}
+
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: #4d5bf9;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  ion-icon {
+    position: absolute;
+    color: #fff;
+    font-size: 40px;
+    display: none;
+
+    &.open {
+      display: block;
+    }
+
+    &.close {
+      display: none;
+    }
+  }
+}
+
+.toggle.active {
+  background: #ff4d89;
+  ion-icon {
+    &.open {
+      display: none;
+    }
+    &.close {
+      display: block;
+    }
+  }
+}
+</style>

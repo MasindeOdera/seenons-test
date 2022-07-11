@@ -1,33 +1,34 @@
 <template>
-  <nav>
-    <router-link to="/">Streams</router-link> |
-    <router-link to="/schedule">Schedule</router-link> |
-    <router-link to="/insights">Insights</router-link> |
-    <router-link to="/support">Support</router-link> |
-    <router-link to="/account">Account</router-link>
-  </nav>
-  <router-view />
+  <MenuNavigation />
 </template>
 
+<script lang="ts">
+import { defineComponent } from "vue";
+import MenuNavigation from "@/components/MenuNavigation.vue";
+
+export default defineComponent({
+  name: "App",
+  components: {
+    MenuNavigation,
+  },
+});
+</script>
+
 <style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background: #fff;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
