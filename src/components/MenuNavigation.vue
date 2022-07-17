@@ -51,6 +51,11 @@ export default defineComponent({
       active: false,
     };
   },
+  methods: {
+    seenonsHomepage() {
+      window.open("https://seenons.com/en/home/", "_blank");
+    },
+  },
 });
 </script>
 
@@ -78,7 +83,7 @@ export default defineComponent({
     left: 0;
     width: 100%;
     padding-left: 10px;
-    padding-top: 40px;
+    padding-top: 60px;
 
     li {
       position: relative;
@@ -95,10 +100,10 @@ export default defineComponent({
         height: 40px;
 
         &.router-link-exact-active {
-          background: #fff;
+          background: #eaeef2;
           color: #333;
-          border-top-left-radius: 20px;
-          border-bottom-left-radius: 20px;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
         }
 
         .icon {
@@ -159,7 +164,7 @@ export default defineComponent({
 }
 
 .toggle.active {
-  background: #ffffff;
+  background: #e6f6f4;
   border: 1px solid #00a891;
   ion-icon {
     &.open {
