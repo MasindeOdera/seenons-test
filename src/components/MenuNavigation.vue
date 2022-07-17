@@ -1,5 +1,5 @@
 <template>
-  <nav class="navigation" :class="{ active: active }">
+  <nav class="navigation" :class="{ active: menuOpen }">
     <ul>
       <li class="list">
         <router-link to="/"
@@ -34,7 +34,12 @@
       </li>
     </ul>
   </nav>
-  <div class="toggle" :class="{ active: active }" @click="active = !active">
+  <!-- <div class="toggle" :class="{ active: active }" @click="active = !active"> -->
+  <div
+    class="toggle"
+    :class="{ active: menuOpen }"
+    @click="toggleMenu(menuOpen)"
+  >
     <ion-icon name="menu-outline" class="open"></ion-icon>
     <ion-icon name="close-outline" class="close"></ion-icon>
   </div>
@@ -42,6 +47,7 @@
 </template>
 
 <script lang="ts">
+import { mapActions, mapGetters } from "vuex";
 import { defineComponent } from "vue";
 
 export default defineComponent({
@@ -52,9 +58,13 @@ export default defineComponent({
     };
   },
   methods: {
-    seenonsHomepage() {
-      window.open("https://seenons.com/en/home/", "_blank");
+    ...mapActions(["toggleMenuOpen"]),
+    toggleMenu(active: boolean) {
+      this.toggleMenuOpen(!active);
     },
+  },
+  computed: {
+    ...mapGetters({ menuOpen: "getMenuOpenStatus" }),
   },
 });
 </script>
@@ -85,7 +95,7 @@ export default defineComponent({
     padding-left: 10px;
     padding-top: 60px;
 
-    li {
+    .list {
       position: relative;
       list-style: none;
       width: 100%;
@@ -126,6 +136,7 @@ export default defineComponent({
           height: 40px;
           line-height: 50px;
           white-space: normal;
+          font-weight: 600;
         }
       }
     }

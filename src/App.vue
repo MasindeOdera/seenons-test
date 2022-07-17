@@ -2,7 +2,7 @@
   <div class="menu">
     <MenuNavigation />
     <a href="https://seenons.com/en/home/" target="_blank" class="logo">
-      <img src="./assets/seenons-logo.svg" />
+      <img alt="Seenons logo" src="./assets/seenons-logo.svg" />
     </a>
   </div>
 </template>

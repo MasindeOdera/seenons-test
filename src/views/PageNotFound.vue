@@ -1,5 +1,5 @@
 <template>
-  <div class="page-not-found">
+  <div class="page-not-found" :class="{ resize: menuOpen }">
     <div class="empty">
       <ion-icon name="warning-sharp"></ion-icon>
       <p class="empty-title h5">This Page was not found</p>
@@ -14,15 +14,27 @@
 </template>
 
 <script lang="ts">
+import { mapGetters } from "vuex";
+import { defineComponent } from "vue";
+
 export default {
   name: "PageNotFound",
+  computed: {
+    ...mapGetters({ menuOpen: "getMenuOpenStatus" }),
+  },
 };
 </script>
 
 <style lang="scss">
 .page-not-found {
-  max-width: 800px;
-  margin: auto;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 10%;
+  width: 80%;
+  &.resize {
+    margin-left: 20%;
+    width: 60%;
+  }
   ion-icon.md.hydrated {
     width: 4em;
     height: 4em;
