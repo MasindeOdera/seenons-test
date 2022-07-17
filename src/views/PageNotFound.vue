@@ -5,7 +5,7 @@
       <p class="empty-title h5">This Page was not found</p>
       <p class="empty-subtitle">Click the button to return to Home</p>
       <div class="empty-action">
-        <button class="btn btn-primary">
+        <button class="return">
           <router-link to="/">Home</router-link>
         </button>
       </div>
@@ -17,18 +17,18 @@
 import { mapGetters } from "vuex";
 import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   name: "PageNotFound",
   computed: {
     ...mapGetters({ menuOpen: "getMenuOpenStatus" }),
   },
-};
+});
 </script>
 
 <style lang="scss">
 .page-not-found {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 20%;
   margin-left: 10%;
   width: 80%;
   &.resize {
@@ -40,10 +40,13 @@ export default {
     height: 4em;
     color: #00bfa6;
   }
-  .btn.btn-primary {
+  .return {
     background: #00a891;
     border-color: #00a891;
     border: 0.05rem solid #00a891;
+    border: none;
+    border-radius: 10px;
+    padding: 6px;
     a {
       color: #fff;
       outline: none;

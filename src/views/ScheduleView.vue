@@ -1,6 +1,6 @@
 <template>
   <div class="schedule" :class="{ resize: menuOpen }">
-    <h1>This is the schedule page</h1>
+    <h1>Schedule</h1>
   </div>
 </template>
 

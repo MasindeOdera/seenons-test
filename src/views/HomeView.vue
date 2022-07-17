@@ -1,7 +1,7 @@
 <template>
   <div class="home" :class="{ resize: menuOpen }">
     <HelloWorld msg="" />
-    <h1>Home screen</h1>
+    <h1>My Streams</h1>
   </div>
 </template>
 

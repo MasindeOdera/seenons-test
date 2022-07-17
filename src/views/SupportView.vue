@@ -1,6 +1,6 @@
 <template>
   <div class="support" :class="{ resize: menuOpen }">
-    <h1>This is the support page</h1>
+    <h1>Support</h1>
   </div>
 </template>
 

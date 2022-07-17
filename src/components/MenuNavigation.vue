@@ -34,7 +34,6 @@
       </li>
     </ul>
   </nav>
-  <!-- <div class="toggle" :class="{ active: active }" @click="active = !active"> -->
   <div
     class="toggle"
     :class="{ active: menuOpen }"
