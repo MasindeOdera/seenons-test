@@ -31,6 +31,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "account",
     component: () => import("../views/AccountView.vue"),
   },
+  {
+    path: "/:catchAll(.*)",
+    name: "PageNotFound",
+    component: () => import("../views/PageNotFound.vue"),
+  },
 ];
 
 const router = createRouter({
