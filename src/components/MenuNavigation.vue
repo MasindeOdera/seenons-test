@@ -60,16 +60,16 @@ export default defineComponent({
   top: 20px;
   left: 20px;
   bottom: 20px;
-  width: 70px;
+  width: 60px;
   border-radius: 10px;
   box-sizing: initial;
-  border-left: 5px solid #4d5bf9;
-  background: #4d5bf9;
+  border-left: 5px solid #00a891;
+  background: #00a891;
   transition: width 0.5s;
   overflow-x: hidden;
 
   &.active {
-    width: 300px;
+    width: 140px;
   }
 
   ul {
@@ -77,7 +77,7 @@ export default defineComponent({
     top: 0;
     left: 0;
     width: 100%;
-    padding-left: 5px;
+    padding-left: 10px;
     padding-top: 40px;
 
     li {
@@ -92,6 +92,7 @@ export default defineComponent({
         display: flex;
         text-decoration: none;
         color: #fff;
+        height: 40px;
 
         &.router-link-exact-active {
           background: #fff;
@@ -103,9 +104,9 @@ export default defineComponent({
         .icon {
           position: relative;
           display: block;
-          min-width: 60px;
-          height: 60px;
-          line-height: 70px;
+          min-width: 40px;
+          height: 40px;
+          line-height: 54px;
           text-align: center;
 
           ion-icon {
@@ -117,8 +118,8 @@ export default defineComponent({
           position: relative;
           display: block;
           padding-left: 10px;
-          height: 60px;
-          line-height: 60px;
+          height: 40px;
+          line-height: 50px;
           white-space: normal;
         }
       }
@@ -132,7 +133,8 @@ export default defineComponent({
   right: 20px;
   width: 40px;
   height: 40px;
-  background: #4d5bf9;
+  background: #00a891;
+  border: none;
   border-radius: 10px;
   cursor: pointer;
   display: flex;
@@ -141,22 +143,24 @@ export default defineComponent({
 
   ion-icon {
     position: absolute;
-    color: #fff;
     font-size: 40px;
     display: none;
 
     &.open {
       display: block;
+      color: #fff;
     }
 
     &.close {
       display: none;
+      color: #00a891;
     }
   }
 }
 
 .toggle.active {
-  background: #ff4d89;
+  background: #ffffff;
+  border: 1px solid #00a891;
   ion-icon {
     &.open {
       display: none;
