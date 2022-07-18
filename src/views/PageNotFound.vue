@@ -2,8 +2,8 @@
   <div class="page-not-found" :class="{ resize: menuOpen }">
     <div class="empty">
       <ion-icon name="warning-sharp"></ion-icon>
-      <p class="empty-title h5">This Page was not found</p>
-      <p class="empty-subtitle">Click the button to return to Home</p>
+      <h5>This Page was not found</h5>
+      <h4>Click the button to return to Home</h4>
       <div class="empty-action">
         <button class="return">
           <router-link to="/">Home</router-link>

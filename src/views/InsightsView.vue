@@ -1,6 +1,6 @@
 <template>
   <div class="insights">
-    <h1>My Insights</h1>
+    <header>My Insights</header>
   </div>
 </template>
 
@@ -25,6 +25,14 @@ export default defineComponent({
   &.resize {
     margin-left: 20%;
     width: 60%;
+  }
+
+  header {
+    font-size: 14px;
+    font-weight: 600;
+    @media only screen and (min-width: 600px) {
+      font-size: 24px;
+    }
   }
 }
 </style>
